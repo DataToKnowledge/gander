@@ -1,7 +1,5 @@
 import sbt._
 
-organization := "com.intenthq"
-
 organizationName := "Intent HQ"
 
 organizationHomepage := Some(url("http://www.intenthq.com"))
@@ -15,13 +13,6 @@ homepage := Some(url("https://github.com/intenthq/gander"))
 developers := List(
   Developer(id = "albertpastrana", name = "Albert Pastrana", email = "", url = new URL("https://github.com/albertpastrana")),
   Developer(id = "ArturSoler", name = "Artur Soler", email = "", url = new URL("https://github.com/ArturSoler"))
-)
-
-scmInfo := Some(
-  ScmInfo(
-    browseUrl = new URL("https://github.com/intenthq/gander"),
-    connection = "scm:git:git@github.com:intenthq/gander.git"
-  )
 )
 
 licenses += "Apache2" -> url("http://www.apache.org/licenses/")
@@ -41,7 +32,6 @@ scalacOptions ++= Seq(
 
 testOptions in Test += Tests.Argument("-oF")
 
-credentials += Credentials(Path.userHome / ".ivy2" / ".maven-credentials")
 
 libraryDependencies ++= Seq(
   "commons-lang" % "commons-lang" % "2.6",
@@ -55,9 +45,5 @@ libraryDependencies ++= Seq(
 )
 
 scalacOptions ++= Seq("-unchecked", "-deprecation")
-
-publishTo := Some("Sonatype Snapshots Nexus" at "https://oss.sonatype.org/service/local/staging/deploy/maven2")
-
-releasePublishArtifactsAction := PgpKeys.publishSigned.value
 
 lazy val root = project.in(file(".")).configs(IntegrationTest)
