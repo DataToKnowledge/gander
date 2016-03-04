@@ -41,9 +41,8 @@ libraryDependencies ++= Seq(
   "org.joda" % "joda-convert" % "1.8.1",
   "org.jsoup" % "jsoup" % "1.8.3",
   "org.slf4j"	% "slf4j-api"	% "1.7.13",
-  "org.specs2" %% "specs2-core" % "3.6.5" % "it,test"
+  "org.specs2" %% "specs2-core" % "3.6.5" % "test"
 )
 
 scalacOptions ++= Seq("-unchecked", "-deprecation")
 
-lazy val root = project.in(file(".")).configs(IntegrationTest)
